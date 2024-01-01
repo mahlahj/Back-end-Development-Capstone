@@ -1,0 +1,16 @@
+from django.urls import path, re_path
+from . import views
+
+urlpatterns = [
+    #re_path(r"^$", views.index, name="index"),
+    path("", views.concerts, name="index"),
+    path("songs/", views.songs, name="songs"),    
+    path("photos/", views.photos, name="photos"),
+    path("login/", views.login_view, name="login"),
+    path("logout/", views.logout_view, name="logout"),
+    path("signup/", views.signup, name="signup"),
+    path("", views.concerts, name="concerts"),
+    path("test", views.concerts, name="concerts2"),
+    path("concert-detail/<int:id>", views.concert_detail, name="concert_detail"),
+    path("concert_attendee/", views.concert_attendee, name="concert_attendee"),
+]
